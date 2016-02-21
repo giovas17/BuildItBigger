@@ -3,3 +3,8 @@ apply plugin: 'java'
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+task tellJoke << {
+    println 'Why does the chicken cross the street?'
+    println 'To arrive to the other side'
+}
