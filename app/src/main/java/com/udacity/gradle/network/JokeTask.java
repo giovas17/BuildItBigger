@@ -24,6 +24,8 @@ public class JokeTask extends AsyncTask<Void,Void,Boolean> {
     private OnJokeListener listener = null;
     private ProgressDialog progressDialog = null;
 
+    public JokeTask(){}
+
     public JokeTask(Context c){
         context = c;
         listener = (OnJokeListener)context;
@@ -81,11 +83,15 @@ public class JokeTask extends AsyncTask<Void,Void,Boolean> {
 
     @Override
     protected void onPostExecute(Boolean result) {
-        progressDialog.dismiss();
+        if (progressDialog != null) progressDialog.dismiss();
         if (result){
             if (listener != null) listener.OnSuccess(responce);
         }else {
             if (listener != null) listener.OnError(responce);
         }
+    }
+
+    public void setListener(OnJokeListener listener) {
+        this.listener = listener;
     }
 }
