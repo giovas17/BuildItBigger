@@ -16,7 +16,7 @@ import com.udacity.gradle.builditbigger.R;
 import com.udacity.gradle.listeners.OnJokeListener;
 import com.udacity.gradle.network.JokeTask;
 
-public class MainActivity extends AppCompatActivity implements OnJokeListener{
+public class MainActivity extends AppCompatActivity implements OnJokeListener {
 
     private InterstitialAd interstitialAd;
 
